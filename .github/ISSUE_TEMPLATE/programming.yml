@@ -1,0 +1,84 @@
+name: "Programming Task"
+description: "Feature, bug, autonomous/TeleOp work, or sensor integration"
+title: "[Programming] "
+type: Task
+labels: ["Subteam: Programming"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        After submitting, set **Subteam**, **Priority**, and **Due Date** in the sidebar on the right. If this is a bug in existing code, switch the issue Type at the top of this form to "Bug" before submitting — that adjusts which fields show up.
+
+  - type: dropdown
+    id: task-type
+    attributes:
+      label: Task Type
+      options:
+        - Feature
+        - Bug
+        - Autonomous routine
+        - TeleOp controls
+        - Sensor integration
+        - Refactor / cleanup
+        - Documentation
+    validations:
+      required: true
+
+  - type: input
+    id: subsystem
+    attributes:
+      label: Subsystem
+      placeholder: e.g. Drivetrain, arm, vision, odometry
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      placeholder: What needs to be built, changed, or fixed?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      placeholder: What should happen? (skip if this is a new feature with no prior behavior)
+    validations:
+      required: false
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior / What's Going Wrong
+      placeholder: If this is a bug, what actually happens instead?
+    validations:
+      required: false
+
+  - type: textarea
+    id: repro-steps
+    attributes:
+      label: Steps to Reproduce
+      placeholder: |
+        1. Run autonomous...
+        2. Robot does...
+      render: markdown
+    validations:
+      required: false
+
+  - type: input
+    id: hardware-config
+    attributes:
+      label: Hardware / Robot Configuration
+      placeholder: e.g. Practice bot vs comp bot, specific motor/sensor if relevant
+    validations:
+      required: false
+
+  - type: input
+    id: branch-pr
+    attributes:
+      label: Related Branch or PR
+      placeholder: Link a branch or existing PR if work has already started
+    validations:
+      required: false
